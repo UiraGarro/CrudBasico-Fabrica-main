@@ -26,7 +26,13 @@
                     <td>{{ usuario.age }}</td>
                     <td>{{ usuario.birth_date }}</td>
                     <td>{{ usuario.phone }}</td>
-                </tr>
+                    <td>
+                    <a href="{% url 'usuarios:detalhe' usuario.id %}"><button>Detalhes</button></a>
+                    <a href="{% url 'usuarios:atualizar' usuario.id %}"><button>Atualizar</button></a>
+                    <a href="{% url 'usuarios:deletar' usuario.id %}"><button>Deletar</button></a>
+                </td>
+
+            </tr>
             {% endfor %}
         </table>
     {% else %}
@@ -34,5 +40,7 @@
         <button><a href="{% url 'usuarios:criar' %}">Criar usuario</a></button>
         <button><a href="{% url 'usuarios:home' %}">Voltar</a></button>
     {% endif %}
-</body>
+        <form>
+        <button><a href="{% url 'usuarios:home' %}">Voltar</a></button>
+</body> 
 </html>
