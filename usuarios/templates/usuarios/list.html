@@ -31,6 +31,8 @@
         </table>
     {% else %}
         <h1>Não existem usuarios</h1>
+        <button><a href="{% url 'usuarios:criar' %}">Criar usuario</a></button>
+        <button><a href="{% url 'usuarios:home' %}">Voltar</a></button>
     {% endif %}
 </body>
 </html>
